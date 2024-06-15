@@ -1,23 +1,4 @@
-// Initialisation de la carte avec Leaflet.js
-// Centré sur la France avec un zoom adapté
-var map = L.map('map-container').setView([46.603354, 1.888334], 6); // Centré sur la France
-
-// Ajouter une couche de carte
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-}).addTo(map);
-
-// Ajouter des marqueurs interactifs (exemple)
-var markers = [
-    { lat: 48.8566, lon: 2.3522, popup: "Paris - Exemple de Lieu" },
-    { lat: 43.6108, lon: 3.8778, popup: "Montpellier - Exemple de Lieu" }
-];
-
-markers.forEach(function(marker) {
-    L.marker([marker.lat, marker.lon]).addTo(map)
-        .bindPopup(marker.popup);
-});
-
+// main.js - Script général pour toutes les pages
 // Validation de formulaire de contact
 document.querySelector('#contact form').addEventListener('submit', function(e) {
     var name = document.getElementById('name').value.trim();
@@ -57,3 +38,24 @@ cards.forEach(function(card) {
         card.classList.remove('shadow-lg');
     });
 });
+
+// Initialisation de la carte pour les pages de catégories
+if (document.querySelector('#map-container')) {
+    var map = L.map('map-container').setView([46.603354, 1.888334], 6); // Centré sur la France
+
+    // Ajouter une couche de carte
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Ajouter des marqueurs interactifs (exemple)
+    var markers = [
+        { lat: 48.8566, lon: 2.3522, popup: "Paris - Exemple de Lieu" },
+        { lat: 43.6108, lon: 3.8778, popup: "Montpellier - Exemple de Lieu" }
+    ];
+
+    markers.forEach(function(marker) {
+        L.marker([marker.lat, marker.lon]).addTo(map)
+            .bindPopup(marker.popup);
+    });
+}
