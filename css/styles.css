@@ -1,0 +1,146 @@
+/* --- Global Styles --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+/* --- Header Section --- */
+header {
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+header .btn {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* --- About Section --- */
+#about {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 3rem 0;
+}
+
+#about .container {
+    max-width: 800px;
+    text-align: center;
+}
+
+/* --- Categories Section --- */
+#categories {
+    padding: 3rem 0;
+}
+
+#categories .card {
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+#categories .card:hover {
+    transform: scale(1.05);
+}
+
+#categories .card-body {
+    padding: 2rem;
+}
+
+#categories .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Map Section --- */
+#map-container {
+    height: 500px;
+    margin-top: 2rem;
+    border: 2px solid #ddd;
+}
+
+/* --- Contact Section --- */
+#contact {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+#contact form .form-control {
+    margin-bottom: 1rem;
+}
+
+#contact form button {
+    padding: 0.75rem 1.5rem;
+}
+
+/* --- Login Section --- */
+#login {
+    padding: 3rem 0;
+}
+
+#login form .form-control {
+    margin-bottom: 1rem;
+}
+
+#login form button {
+    padding: 0.75rem 1.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer i.fa-heart {
+    color: red;
+}
