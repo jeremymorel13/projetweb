@@ -1,5 +1,6 @@
 // Initialisation de la carte avec Leaflet.js
-var map = L.map('map-container').setView([48.8566, 2.3522], 13); // Centré sur Paris
+// Centré sur la France avec un zoom adapté
+var map = L.map('map-container').setView([46.603354, 1.888334], 6); // Centré sur la France
 
 // Ajouter une couche de carte
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -9,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Ajouter des marqueurs interactifs (exemple)
 var markers = [
     { lat: 48.8566, lon: 2.3522, popup: "Paris - Exemple de Lieu" },
-    { lat: 48.8584, lon: 2.2945, popup: "Tour Eiffel - Exemple de Lieu" }
+    { lat: 43.6108, lon: 3.8778, popup: "Montpellier - Exemple de Lieu" }
 ];
 
 markers.forEach(function(marker) {
