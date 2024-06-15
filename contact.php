@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Configuration de l'email
-    $to = "votre-adresse-email@example.com";
+    $to = "jeremy13morel@gmail.com";
     $subject = "Nouvelle demande de contact";
     $headers = "From: " . $email;
 
