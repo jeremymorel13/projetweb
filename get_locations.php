@@ -13,9 +13,20 @@ if ($conn->connect_error) {
     die("Connexion échouée: " . $conn->connect_error);
 }
 
-// Préparer la requête SQL
-$sql = "SELECT name, description, latitude, longitude, category FROM locations";
-$result = $conn->query($sql);
+// Vérifier si la catégorie est définie dans l'URL
+$category = isset($_GET['category']) ? $_GET['category'] : '';
+
+if (!empty($category)) {
+    // Préparer la requête SQL pour la catégorie spécifiée
+    $stmt = $conn->prepare("SELECT name, description, latitude, longitude, category FROM locations WHERE category = ?");
+    $stmt->bind_param("s", $category);
+} else {
+    // Préparer la requête SQL pour toutes les catégories (par défaut)
+    $stmt = $conn->prepare("SELECT name, description, latitude, longitude, category FROM locations");
+}
+
+$stmt->execute();
+$result = $stmt->get_result();
 
 $locations = array();
 
@@ -30,5 +41,6 @@ if ($result->num_rows > 0) {
 header('Content-Type: application/json');
 echo json_encode($locations);
 
+$stmt->close();
 $conn->close();
 ?>
