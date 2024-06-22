@@ -1,4 +1,5 @@
 // main.js - Script général pour toutes les pages
+
 // Validation de formulaire de contact
 document.querySelector('#contact form').addEventListener('submit', function(e) {
     var name = document.getElementById('name').value.trim();
