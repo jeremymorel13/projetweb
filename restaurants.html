@@ -104,6 +104,17 @@
         var selectOnMap = document.getElementById('select-on-map');
         var locationCoords = null;
 
+        // Charger et afficher les lieux depuis la base de données
+        fetch('get_locations.php')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(location => {
+                    var marker = L.marker([location.latitude, location.longitude]).addTo(map);
+                    marker.bindPopup(`<strong>${location.name}</strong><br>${location.description}`);
+                });
+            })
+            .catch(error => console.error('Erreur de chargement des lieux:', error));
+
         map.on('click', function(e) {
             if (selectOnMap.checked) {
                 locationCoords = e.latlng;
