@@ -104,8 +104,8 @@
         var selectOnMap = document.getElementById('select-on-map');
         var locationCoords = null;
 
-        // Charger et afficher les lieux depuis la base de données
-        fetch('get_locations.php')
+        // Charger et afficher les lieux de la catégorie "urbex" depuis la base de données
+        fetch('get_locations.php?category=urbex')
             .then(response => response.json())
             .then(data => {
                 data.forEach(location => {
